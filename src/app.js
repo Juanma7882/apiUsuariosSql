@@ -6,11 +6,15 @@ import { manejadorErrores } from "./middleware/manejoErrores.js"
 
 const app = express();
 
-// Middlewares
+
+console.log("midelware")
+//! Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Utils
+console.log("utils")
+
+// Utils extra para ayudar 
 app.use(formatearRespuesta);
 
 
@@ -25,7 +29,7 @@ app.get("/", (req, res) => {
     });
 });
 
-// Manejador de errores
+//!  Manejador de errores va al final midelware
 app.use(manejadorErrores);
 
 export default app;

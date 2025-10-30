@@ -1,11 +1,13 @@
 
 
+
+
+
 const formatearRespuesta = (req, res, next) => {
     // Debug: confirmar que el middleware se ejecuta en cada petición
-    // Puedes quitar o comentar este log en producción
-    console.log('[middleware] formatearRespuesta ejecutado para', req.method, req.originalUrl);
-    res.success = (message, data = []) => {
-        res.status(200).json({
+    // console.log('[middleware] formatearRespuesta ejecutado para', req.method, req.originalUrl);
+    res.success = (status, message, data = []) => {
+        res.status(status).json({
             success: true,
             message,
             data,

@@ -1,5 +1,5 @@
 import { sync, close } from "../data/db";
-import Usuario from "../entities/Usuario"; // Importá tus modelos
+// import Usuario from "../entities/Usuario"; // Importá tus modelos
 
 async function sincronizar() {
     try {

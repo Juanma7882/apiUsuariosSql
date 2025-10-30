@@ -1,4 +1,5 @@
 import { param, validationResult } from "express-validator";
+console.log('validar usuario function');
 
 const validarIdUsuario = [
     param("id").isInt().withMessage("El ID debe ser un número entero"),
@@ -15,4 +16,8 @@ const validarIdUsuario = [
         next();
     },
 ];
+
+
+
+
 export { validarIdUsuario }

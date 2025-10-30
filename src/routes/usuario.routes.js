@@ -1,10 +1,11 @@
 import { Router } from "express";
 import { validarIdUsuario } from "../middleware/validarCampos.js";
+import { validarCrearUsuario } from "../middleware/validarCrearUsuario.js";
 import { crearUsuario, listarUsuarios, obtenerUsuarioPorId, actualizarUsuario, eliminarUsuario } from "../controllers/controllerUsuario.js";
 
 const router = Router();
-console.log("[router] usuario.routes.js cargado correctamente");
-router.post("/", crearUsuario);
+console.log("rutas")
+router.post("/", validarCrearUsuario, crearUsuario);
 router.get("/", listarUsuarios);
 
 // Obtener un usuario por ID
